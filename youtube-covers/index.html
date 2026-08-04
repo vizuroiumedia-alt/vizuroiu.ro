@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coperte YouTube 16:9 — Clienți Vizuroiu Media</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#050508;font-family:system-ui,sans-serif;padding:40px 24px}
+h1{color:#F4F5F7;text-align:center;font-size:1.4rem;margin-bottom:8px;font-weight:700}
+.subtitle{color:#9AA0B0;text-align:center;font-size:.9rem;margin-bottom:40px}
+.subtitle strong{color:#FF5436}
+
+.grid{display:flex;flex-direction:column;gap:60px;align-items:center}
+
+.client-block{display:flex;flex-direction:column;align-items:center;gap:10px}
+.client-name{color:#9AA0B0;font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+.cover{
+  width:1280px;
+  height:720px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  border-radius:6px;
+  box-shadow:0 8px 48px rgba(0,0,0,.8);
+  background:#0B0C10;
+  flex-shrink:0;
+}
+
+/* glow accent — stânga sus */
+.cover::before{
+  content:"";
+  position:absolute;
+  top:-80px;left:-80px;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,84,54,.22),transparent 65%);
+  filter:blur(20px);
+  pointer-events:none;
+  z-index:0;
+}
+/* glow accent 2 — dreapta jos */
+.cover::after{
+  content:"";
+  position:absolute;
+  bottom:-100px;right:-60px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(255,154,60,.14),transparent 65%);
+  filter:blur(24px);
+  pointer-events:none;
+  z-index:0;
+}
+
+.cover img{
+  max-width:580px;
+  max-height:340px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  position:relative;
+  z-index:1;
+  filter:brightness(0) invert(1);
+}
+
+/* logourile care au deja culori clare si nu trebuie inversate */
+.cover img.color{filter:none}
+
+/* logourile circulare (ONE Automobile) */
+.cover img.round{
+  border-radius:50%;
+  width:280px;height:280px;
+  object-fit:cover;
+  max-width:none;max-height:none;
+  filter:none;
+}
+
+/* watermark Vizuroiu Media */
+.wm{
+  position:absolute;
+  bottom:24px;right:28px;
+  font-family:system-ui,sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:rgba(255,255,255,.18);
+  letter-spacing:.04em;
+  z-index:2;
+}
+.wm span{color:rgba(255,84,54,.35)}
+
+.hint{color:#555;font-size:.75rem}
+
+@media(max-width:1380px){
+  .cover{transform-origin:top center;transform:scale(0.7);margin-bottom:-216px}
+}
+@media(max-width:960px){
+  .cover{transform:scale(0.5);margin-bottom:-360px}
+}
+@media(max-width:680px){
+  .cover{transform:scale(0.35);margin-bottom:-468px}
+}
+</style>
+</head>
+<body>
+
+<h1>Coperte YouTube 16:9 — Clienți Vizuroiu Media</h1>
+<p class="subtitle">Fiecare cover este exact <strong>1280 × 720 px</strong>. Zoom 100% + full screen → screenshot.</p>
+
+<div class="grid">
+
+  <div class="client-block">
+    <div class="client-name">Numa Cafe</div>
+    <div class="cover">
+      <img src="logos/numa-cafe.png" alt="Numa Cafe">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Pizzeria Arena</div>
+    <div class="cover">
+      <img src="logos/pizzeria-arena.png" alt="Pizzeria Arena">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Metalift</div>
+    <div class="cover">
+      <img src="logos/metalift.jpg" alt="Metalift" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">CONAF</div>
+    <div class="cover">
+      <img src="logos/conaf.webp" alt="CONAF" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Hotel LaRocca</div>
+    <div class="cover">
+      <img src="logos/hotel-larocca.webp" alt="Hotel LaRocca" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Autentic Gift</div>
+    <div class="cover">
+      <img src="logos/autentic-gift.png" alt="Autentic Gift" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Autentic DDD</div>
+    <div class="cover">
+      <img src="logos/autentic-ddd.png" alt="Autentic DDD" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Casa Ferrara</div>
+    <div class="cover">
+      <img src="logos/casa-ferrara.png" alt="Casa Ferrara" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Ciugulin Mob</div>
+    <div class="cover">
+      <img src="logos/ciugulin-mob.png" alt="Ciugulin Mob" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Tabiet Good Food</div>
+    <div class="cover">
+      <img src="logos/tabiet-good-food.png" alt="Tabiet Good Food" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Anemona Hotel</div>
+    <div class="cover">
+      <img src="logos/anemona-hotel.png" alt="Anemona Hotel" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Airport House</div>
+    <div class="cover">
+      <img src="logos/airport-house.jpg" alt="Airport House" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Craiova Events</div>
+    <div class="cover">
+      <img src="logos/craiova-events.png" alt="Craiova Events" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Ten Million Romania</div>
+    <div class="cover">
+      <img src="logos/ten-million.png" alt="Ten Million Romania">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">CCIABR</div>
+    <div class="cover">
+      <img src="logos/cciabr.png" alt="CCIABR" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Restaurant Reset</div>
+    <div class="cover">
+      <img src="logos/restaurant-reset.webp" alt="Restaurant Reset" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">AG Tiny House</div>
+    <div class="cover">
+      <img src="logos/ag-tiny-house.svg" alt="AG Tiny House" style="width:280px;height:280px;max-width:none;max-height:none">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Brăila Imobiliare</div>
+    <div class="cover">
+      <img src="logos/braila-imobiliare.png" alt="Brăila Imobiliare" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Animall Delta</div>
+    <div class="cover">
+      <img src="logos/animall-delta.webp" alt="Animall Delta" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">ONE Automobile</div>
+    <div class="cover">
+      <img src="logos/one-automobile.jpg" alt="ONE Automobile" class="round">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Prontoo Pizza</div>
+    <div class="cover">
+      <img src="logos/prontoo-pizza.png" alt="Prontoo Pizza" class="color">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+  <div class="client-block">
+    <div class="client-name">Diego</div>
+    <div class="cover">
+      <img src="logos/diego.png" alt="Diego">
+      <div class="wm">Vizuroiumedia<span>.</span></div>
+    </div>
+  </div>
+
+</div>
+
+<p style="text-align:center;color:#333;font-size:.8rem;margin-top:80px;padding-bottom:40px">Vizuroiu Media — youtube-covers</p>
+</body>
+</html>

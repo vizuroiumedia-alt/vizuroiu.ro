@@ -1,0 +1,6 @@
+<svg width="110" height="110" viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="55" cy="55" r="48" fill="none" stroke="#1a5c3a" stroke-width="4.5"/>
+  <path d="M 24 78 C 40 55, 60 55, 88 40" fill="none" stroke="#1a5c3a" stroke-width="4.5" stroke-linecap="round"/>
+  <text x="33" y="70" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#1a5c3a">A</text>
+  <text x="55" y="70" font-family="Arial, sans-serif" font-size="42" font-weight="700" fill="#1a5c3a">G</text>
+</svg>
