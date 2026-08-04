@@ -128,6 +128,10 @@ header.scrolled{border-color:var(--border)}
 .field textarea{resize:vertical;min-height:130px}
 .field select option{background:var(--bg)}
 
+.field-checkbox{margin-bottom:20px}
+.checkbox-label{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;font-weight:400;color:var(--muted);letter-spacing:normal;line-height:1.4;cursor:pointer}
+.checkbox-label input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+
 .submit-btn{width:100%;justify-content:center;margin-top:8px;font-size:1rem;padding:1rem}
 
 /* success state */
@@ -261,10 +265,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
       <h2>Trimite-ne un mesaj</h2>
       <p>Completează formularul și te contactăm noi cât mai repede.</p>
 
-      <form id="contactForm" action="https://formsubmit.co/vizuroiumedia@gmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Mesaj nou de pe site — Vizuroiu Media" />
-        <input type="hidden" name="_next" value="contact.html?trimis=1" />
-        <input type="hidden" name="_template" value="table" />
+      <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzMqdBc7C_visZoy1cNxhdN_fQfrs3aYPmGIgsPbtZaw_uL_FOGdNWH2EapiTV5U88Y/exec" method="POST">
 
         <div class="form-row">
           <div class="field">
@@ -308,6 +309,13 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
         <div class="field">
           <label for="cui">CUI-ul firmei</label>
           <input type="text" id="cui" name="CUI" inputmode="numeric" pattern="[0-9]*" placeholder="ex: 12345678" />
+        </div>
+
+        <div class="field field-checkbox">
+          <label class="checkbox-label">
+            <input type="checkbox" id="gdpr" name="GDPR" value="Da" required />
+            Sunt de acord să primesc informări despre servicii și prețuri prin email/telefon. *
+          </label>
         </div>
 
         <button type="submit" class="btn btn-primary submit-btn">
