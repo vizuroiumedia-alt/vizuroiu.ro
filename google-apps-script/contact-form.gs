@@ -30,7 +30,7 @@ function doPost(e) {
     var nume = p['Nume'] || 'Client';
     MailApp.sendEmail({
       to: p['Email'],
-      subject: 'Mulțumim pentru mesaj — Vizuroiu Media',
+      subject: 'Mulțumim pentru mesaj — Vizuroiu',
       body:
         'Mulțumim, ' + nume + '!\n\n' +
         'Am primit datele tale și confirmăm înscrierea. Echipa noastră de content marketing analizează ' +
@@ -42,7 +42,7 @@ function doPost(e) {
 
   MailApp.sendEmail({
     to: 'vizuroiumedia@gmail.com',
-    subject: 'Mesaj nou de pe site — Vizuroiu Media',
+    subject: 'Mesaj nou de pe site — Vizuroiu',
     body:
       'Nume: ' + (p['Nume'] || '') + '\n' +
       'Telefon: ' + (p['Telefon'] || '') + '\n' +

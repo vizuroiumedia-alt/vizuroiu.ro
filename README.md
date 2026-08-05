@@ -1,6 +1,6 @@
-# Vizuroiu Media — Site
+# Vizuroiu — Site
 
-Site-ul de prezentare al agenției **Vizuroiu Media** (video & marketing), Brăila — cu acoperire în Galați, Buzău și Tulcea.
+Site-ul de prezentare al agenției **Vizuroiu** (video & marketing), Brăila — cu acoperire în Galați, Buzău și Tulcea.
 
 ## Structură
 
