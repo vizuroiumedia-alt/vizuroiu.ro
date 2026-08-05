@@ -265,7 +265,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
       <h2>Trimite-ne un mesaj</h2>
       <p>Completează formularul și te contactăm noi cât mai repede.</p>
 
-      <form id="contactForm" action="https://script.google.com/macros/s/AKfycbzMqdBc7C_visZoy1cNxhdN_fQfrs3aYPmGIgsPbtZaw_uL_FOGdNWH2EapiTV5U88Y/exec" method="POST">
+      <form id="contactForm" data-endpoint="https://script.google.com/macros/s/AKfycbzMqdBc7C_visZoy1cNxhdN_fQfrs3aYPmGIgsPbtZaw_uL_FOGdNWH2EapiTV5U88Y/exec">
 
         <div class="form-row">
           <div class="field">
@@ -387,13 +387,24 @@ if(location.hash==='#contactForm'){
   },100);
 }
 
-if(new URLSearchParams(location.search).get('trimis')==='1'){
-  document.getElementById('contactForm').style.display='none';
-  const msg=document.getElementById('successMsg');
-  msg.style.display='flex';
-  // Google Ads — înlocuiește AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXX cu eticheta ta de conversie
-  gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXX'});
-}
+const contactForm=document.getElementById('contactForm');
+contactForm?.addEventListener('submit', function(ev){
+  ev.preventDefault();
+  const btn=contactForm.querySelector('.submit-btn');
+  if(btn){btn.disabled=true;btn.style.opacity=.6;}
+  fetch(contactForm.dataset.endpoint,{method:'POST',mode:'no-cors',body:new FormData(contactForm)})
+    .then(()=>{
+      contactForm.style.display='none';
+      const msg=document.getElementById('successMsg');
+      msg.style.display='flex';
+      // Google Ads — înlocuiește AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXX cu eticheta ta de conversie
+      gtag('event', 'conversion', {'send_to': 'AW-XXXXXXXXXX/XXXXXXXXXXXXXXXXX'});
+    })
+    .catch(()=>{
+      if(btn){btn.disabled=false;btn.style.opacity=1;}
+      alert('A apărut o eroare la trimitere. Te rugăm să încerci din nou sau să ne suni direct.');
+    });
+});
 </script>
 </body>
 </html>

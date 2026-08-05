@@ -53,9 +53,9 @@ function doPost(e) {
       'CUI: ' + (p['CUI'] || '')
   });
 
-  return HtmlService.createHtmlOutput(
-    '<script>window.top.location.href="https://vizuroiu.ro/contact.html?trimis=1";</script>'
-  );
+  // Formularul trimite prin fetch(mode:'no-cors') din contact.html, deci acest
+  // răspuns nu e citit de browser — succesul e afișat direct în pagină.
+  return ContentService.createTextOutput('OK');
 }
 
 function buildConfirmationEmailHtml_(nume) {
