@@ -5,13 +5,21 @@
  * Deploy: Deploy → New deployment → Web app → Execute as: Me →
  * Who has access: Anyone → Deploy. URL-ul rezultat se pune ca "action"
  * în formularul din contact.html.
+ *
+ * Brevo: cheia API se pune în Project Settings → Script Properties, cu
+ * cheia BREVO_API_KEY (nu se scrie niciodată direct în acest fișier,
+ * ca să nu ajungă în repo-ul git).
  */
+
+var BREVO_SENDER_EMAIL = 'contact@vizuroiu.ro';
+var BREVO_SENDER_NAME = 'Vizuroiu';
+var BREVO_REPLY_TO = 'vizuroiumedia@gmail.com';
 
 function doPost(e) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
 
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Data', 'Nume', 'Telefon', 'Email', 'Serviciu', 'Activitate afacere', 'Numele firmei', 'CUI']);
+    sheet.appendRow(['Data', 'Nume', 'Telefon', 'Email', 'Serviciu', 'Activitate afacere', 'Numele firmei']);
   }
 
   var p = e.parameter;
@@ -22,22 +30,16 @@ function doPost(e) {
     p['Email'] || '',
     p['Serviciu'] || '',
     p['Activitate afacere'] || '',
-    p['Numele firmei'] || '',
-    p['CUI'] || ''
+    p['Numele firmei'] || ''
   ]);
 
+  var brevoStatus = 'Brevo status:\n';
   if (p['Email']) {
     var nume = p['Nume'] || 'Client';
-    MailApp.sendEmail({
-      to: p['Email'],
-      subject: 'Mulțumim pentru mesaj — Vizuroiu',
-      body:
-        'Mulțumim, ' + nume + '!\n\n' +
-        'Am primit datele tale și confirmăm înscrierea. Echipa noastră de content marketing analizează ' +
-        'informațiile transmise și te va contacta în cel mai scurt timp.\n\n' +
-        'Echipa Vizuroiu',
-      htmlBody: buildConfirmationEmailHtml_(nume)
-    });
+    brevoStatus += '- Contact: ' + createBrevoContact_(p) + '\n';
+    brevoStatus += '- Email confirmare: ' + sendBrevoConfirmationEmail_(p['Email'], nume) + '\n';
+  } else {
+    brevoStatus += '(fără email în formular, s-a sărit peste Brevo)\n';
   }
 
   MailApp.sendEmail({
@@ -49,13 +51,100 @@ function doPost(e) {
       'Email: ' + (p['Email'] || '') + '\n' +
       'Serviciu: ' + (p['Serviciu'] || '') + '\n' +
       'Activitate afacere: ' + (p['Activitate afacere'] || '') + '\n' +
-      'Numele firmei: ' + (p['Numele firmei'] || '') + '\n' +
-      'CUI: ' + (p['CUI'] || '')
+      'Numele firmei: ' + (p['Numele firmei'] || '') + '\n\n' +
+      brevoStatus
   });
 
   // Formularul trimite prin fetch(mode:'no-cors') din contact.html, deci acest
   // răspuns nu e citit de browser — succesul e afișat direct în pagină.
   return ContentService.createTextOutput('OK');
+}
+
+function getBrevoApiKey_() {
+  return PropertiesService.getScriptProperties().getProperty('BREVO_API_KEY');
+}
+
+// Creează/actualizează contactul în Brevo. Dacă Brevo pică sau cheia lipsește,
+// nu blocăm salvarea în Sheet — doar raportăm statusul, apelantul îl trimite
+// mai departe în emailul de notificare ca să fie ușor de depanat.
+function createBrevoContact_(p) {
+  var apiKey = getBrevoApiKey_();
+  if (!apiKey) return 'lipsește BREVO_API_KEY din Script Properties';
+
+  var payload = {
+    email: p['Email'],
+    attributes: {
+      NUME: p['Nume'] || '',
+      TELEFON: p['Telefon'] || ''
+    },
+    updateEnabled: true
+  };
+
+  try {
+    var res = UrlFetchApp.fetch('https://api.brevo.com/v3/contacts', {
+      method: 'post',
+      contentType: 'application/json',
+      headers: { 'api-key': apiKey },
+      payload: JSON.stringify(payload),
+      muteHttpExceptions: true
+    });
+    var code = res.getResponseCode();
+    if (code >= 300) {
+      return 'EROARE (' + code + '): ' + res.getContentText();
+    }
+    return 'OK';
+  } catch (err) {
+    return 'EROARE: ' + err;
+  }
+}
+
+// Trimite emailul de confirmare prin Brevo (domeniu autentificat), cu
+// Reply-To spre Gmail-ul curent. Dacă Brevo pică, cade pe MailApp ca fallback.
+function sendBrevoConfirmationEmail_(toEmail, nume) {
+  var apiKey = getBrevoApiKey_();
+  if (!apiKey) {
+    sendFallbackConfirmationEmail_(toEmail, nume);
+    return 'lipsește BREVO_API_KEY, trimis prin MailApp (fallback)';
+  }
+
+  var payload = {
+    sender: { name: BREVO_SENDER_NAME, email: BREVO_SENDER_EMAIL },
+    to: [{ email: toEmail, name: nume }],
+    replyTo: { email: BREVO_REPLY_TO },
+    subject: 'Mulțumim pentru mesaj — Vizuroiu',
+    htmlContent: buildConfirmationEmailHtml_(nume)
+  };
+
+  try {
+    var res = UrlFetchApp.fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'post',
+      contentType: 'application/json',
+      headers: { 'api-key': apiKey },
+      payload: JSON.stringify(payload),
+      muteHttpExceptions: true
+    });
+    if (res.getResponseCode() >= 300) {
+      sendFallbackConfirmationEmail_(toEmail, nume);
+      return 'EROARE (' + res.getResponseCode() + '): ' + res.getContentText() + ' — trimis prin MailApp (fallback)';
+    }
+    return 'OK (trimis prin Brevo)';
+  } catch (err) {
+    sendFallbackConfirmationEmail_(toEmail, nume);
+    return 'EROARE: ' + err + ' — trimis prin MailApp (fallback)';
+  }
+}
+
+function sendFallbackConfirmationEmail_(toEmail, nume) {
+  MailApp.sendEmail({
+    to: toEmail,
+    subject: 'Mulțumim pentru mesaj — Vizuroiu',
+    body:
+      'Mulțumim, ' + nume + '!\n\n' +
+      'Am primit datele tale și confirmăm înscrierea. Echipa noastră de content marketing analizează ' +
+      'informațiile transmise și te va contacta în cel mai scurt timp.\n\n' +
+      'Echipa Vizuroiu',
+    htmlBody: buildConfirmationEmailHtml_(nume)
+  });
 }
 
 function buildConfirmationEmailHtml_(nume) {
