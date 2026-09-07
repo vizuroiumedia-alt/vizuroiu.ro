@@ -19,6 +19,7 @@ Site-ul de prezentare al agenției **Vizuroiu** (video & marketing), Brăila —
 - [`client-ag-tiny-house.html`](client-ag-tiny-house.html) — AG Tiny House
 - [`client-animall-delta.html`](client-animall-delta.html) — Animall Delta
 - [`client-braila-imobiliare.html`](client-braila-imobiliare.html) — Brăila Imobiliare
+- [`client-cityhouse-residence.html`](client-cityhouse-residence.html) — CityHouse Residence
 - [`client-conaf.html`](client-conaf.html) — CONAF
 - [`client-diego.html`](client-diego.html) — Diego
 - [`client-iorga-viorel.html`](client-iorga-viorel.html) — Iorga Viorel
