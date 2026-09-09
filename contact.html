@@ -125,6 +125,8 @@ header.scrolled{border-color:var(--border)}
 .field label{font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.04em}
 .field input,.field textarea,.field select{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:.75rem 1rem;color:var(--text);font-family:"Inter",sans-serif;font-size:.95rem;transition:border-color .2s;outline:none;width:100%}
 .field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent)}
+.field input.invalid,.field textarea.invalid{border-color:#ff5a5a}
+.field-error{font-size:.8rem;font-weight:600;color:#ff7a7a;letter-spacing:.02em;margin:2px 0 0}
 .field textarea{resize:vertical;min-height:130px}
 .field select option{background:var(--bg)}
 
@@ -274,7 +276,10 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
           </div>
           <div class="field">
             <label for="telefon">Telefon *</label>
-            <input type="tel" id="telefon" name="Telefon" placeholder="+40 700 000 000" required />
+            <input type="tel" id="telefon" name="Telefon" placeholder="07XXXXXXXX" required
+                   inputmode="numeric" autocomplete="tel" maxlength="10" pattern="07[0-9]{8}"
+                   title="Numărul de telefon trebuie să conțină exact 10 cifre și să înceapă cu 07." />
+            <p class="field-error" id="telefonError" hidden>Numărul de telefon trebuie să conțină exact 10 cifre.</p>
           </div>
         </div>
 
@@ -383,8 +388,52 @@ if(location.hash==='#contactForm'){
 }
 
 const contactForm=document.getElementById('contactForm');
+
+/* ---- Validare număr de telefon (RO: exact 10 cifre, începe cu 07) ---- */
+const telInput=document.getElementById('telefon');
+const telError=document.getElementById('telefonError');
+const TEL_MSG_LEN='Numărul de telefon trebuie să conțină exact 10 cifre.';
+const TEL_MSG_FORMAT='Numărul de telefon trebuie să înceapă cu 07 și să conțină exact 10 cifre.';
+
+function telProblem(){
+  const v=telInput.value;
+  if(v.length!==10) return TEL_MSG_LEN;
+  if(!/^07\d{8}$/.test(v)) return TEL_MSG_FORMAT;
+  return '';
+}
+function showTelError(msg){
+  telError.textContent=msg;
+  telError.hidden=false;
+  telInput.classList.add('invalid');
+  telInput.setCustomValidity(msg);
+}
+function clearTelError(){
+  telError.hidden=true;
+  telInput.classList.remove('invalid');
+  telInput.setCustomValidity('');
+}
+function validateTel(showEmpty){
+  // acceptă doar cifre, maximum 10
+  const cleaned=telInput.value.replace(/\D/g,'').slice(0,10);
+  if(cleaned!==telInput.value) telInput.value=cleaned;
+  const problem=telProblem();
+  if(problem && (showEmpty || cleaned.length>0)){ showTelError(problem); return false; }
+  if(problem){ // gol: fără mesaj vizibil, dar blochează trimiterea
+    telInput.classList.remove('invalid');
+    telError.hidden=true;
+    telInput.setCustomValidity(problem);
+    return false;
+  }
+  clearTelError();
+  return true;
+}
+telInput?.addEventListener('input',()=>validateTel(false));
+telInput?.addEventListener('blur',()=>validateTel(true));
+
 contactForm?.addEventListener('submit', function(ev){
   ev.preventDefault();
+  if(!validateTel(true)){ telInput.focus(); return; }
+  if(!contactForm.checkValidity()){ contactForm.reportValidity(); return; }
   const btn=contactForm.querySelector('.submit-btn');
   if(btn){btn.disabled=true;btn.style.opacity=.6;}
   fetch(contactForm.dataset.endpoint,{method:'POST',mode:'no-cors',body:new FormData(contactForm)})
