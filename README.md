@@ -24,6 +24,7 @@ Site-ul de prezentare al agenției **Vizuroiu** (video & marketing), Brăila —
 - [`client-conaf.html`](client-conaf.html) — CONAF
 - [`client-diego.html`](client-diego.html) — Diego
 - [`client-iorga-viorel.html`](client-iorga-viorel.html) — Iorga Viorel
+- [`client-metalift.html`](client-metalift.html) — Metalift
 - [`client-numa-cafe.html`](client-numa-cafe.html) — Numa Cafe
 - [`client-one-automobile.html`](client-one-automobile.html) — ONE Automobile
 - [`client-pizzeria-arena.html`](client-pizzeria-arena.html) — Pizzeria Arena
