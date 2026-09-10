@@ -286,12 +286,14 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
   display:flex;
   flex-direction:column;
   gap:clamp(6px,1.4vh,14px);
+  width:max-content;
+  max-width:94vw;
   text-align:center;
   opacity:var(--defs);
   z-index:2;
   pointer-events:none;
 }
-.defs .row{font-family:"MuseoModerno",sans-serif;font-weight:600;font-size:clamp(1rem,2.5vw,1.7rem);letter-spacing:.01em;color:var(--muted)}
+.defs .row{font-family:"MuseoModerno",sans-serif;font-weight:600;font-size:clamp(1rem,2.5vw,1.7rem);letter-spacing:.01em;color:var(--muted);white-space:nowrap}
 .defs .row b{font-weight:900;text-transform:uppercase;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .defs .row i{color:var(--muted);font-style:normal;margin:0 .5em;opacity:.6}
 .defs .row span{color:var(--text)}
