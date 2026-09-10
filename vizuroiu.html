@@ -357,6 +357,15 @@ body:not(.anim) .progress{opacity:0;pointer-events:none}
   .mobile-break{display:block}
   .values-grid,.offer-grid{grid-template-columns:1fr}
 }
+@media(max-width:680px){
+  .wordmark{font-size:clamp(1.6rem,8.5vw,3rem)}
+  .wordmark .left{transform:translateX(calc(var(--split) * -9vw - var(--logoout) * 22vw))}
+  .wordmark .right{transform:translateX(calc(var(--split) * 9vw + var(--logoout) * 22vw))}
+  .defs{top:calc(50% + clamp(72px,13vh,120px))}
+  .defs .row{font-size:clamp(.88rem,3.8vw,1.25rem)}
+  .final p{font-size:clamp(1.35rem,5.6vw,2.1rem)}
+  .seam{height:clamp(46px,11vh,88px)}
+}
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal{opacity:1;transform:none}
