@@ -6,21 +6,21 @@
 <title>Vizuroiu — Agenție Video & Marketing în Brăila, Galați, Buzău, Tulcea</title>
 <meta name="description" content="Agenție de content marketing, fotografie și videografie pentru afaceri din Brăila, Galați, Buzău și Tulcea. Filmări, foto și reclame care aduc clienți reali." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://vizuroiumedia.net/vizuroiu.html" />
+<meta property="og:url" content="https://vizuroiu.ro/" />
 <meta property="og:title" content="Vizuroiu — Agenție Video &amp; Marketing în Brăila, Galați, Buzău, Tulcea" />
 <meta property="og:description" content="Agenție de content marketing, fotografie și videografie pentru afaceri din Brăila, Galați, Buzău și Tulcea. Filmări, foto și reclame care aduc clienți reali." />
-<meta property="og:image" content="https://vizuroiumedia.net/img/fondatori-vizuroiu-media.jpg" />
+<meta property="og:image" content="https://vizuroiu.ro/img/fondatori-vizuroiu-media.jpg" />
 <meta property="og:locale" content="ro_RO" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Vizuroiu — Agenție Video &amp; Marketing în Brăila, Galați, Buzău, Tulcea" />
 <meta name="twitter:description" content="Agenție de content marketing, fotografie și videografie pentru afaceri din Brăila, Galați, Buzău și Tulcea. Filmări, foto și reclame care aduc clienți reali." />
-<meta name="twitter:image" content="https://vizuroiumedia.net/img/fondatori-vizuroiu-media.jpg" />
+<meta name="twitter:image" content="https://vizuroiu.ro/img/fondatori-vizuroiu-media.jpg" />
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AdvertisingAgency",
   "name": "Vizuroiu",
-  "url": "https://vizuroiumedia.net/",
+  "url": "https://vizuroiu.ro/",
   "telephone": "+40741540314",
   "email": "vizuroiumedia@gmail.com",
   "address": {
@@ -45,7 +45,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=MuseoModerno:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    PALETĂ — aceeași ca pe TheShortAd. Schimbă valorile aici dacă
@@ -65,6 +65,14 @@
   --maxw: 1180px;
   --r: 16px;
   --ease: cubic-bezier(.2,.7,.2,1);
+
+  /* variabile animate din JS — fiecare 0..1 */
+  --split: 0;
+  --defs: 0;
+  --final: 0;
+  --logoout: 0;
+  --hint: 1;
+  --p: 0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -84,7 +92,7 @@ h1,h2,h3,.display{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;l
 .btn-ghost{border-color:var(--border);color:var(--text)}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
 
-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb, var(--bg) 72%, transparent);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb, var(--bg) 72%, transparent);border-bottom:1px solid transparent;transition:border-color .3s,background .3s,opacity .5s var(--ease),transform .5s var(--ease)}
 header.scrolled{border-color:var(--border)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
 .logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:-.03em;display:flex;align-items:center}
@@ -113,20 +121,6 @@ header.scrolled{border-color:var(--border)}
 .logo-card:hover img{filter:grayscale(0) brightness(1)}
 .client-logo-grid img{filter:grayscale(1) brightness(3);transition:filter .3s}
 .client-logo-grid a:hover img{filter:none!important}
-
-.hero{position:relative;padding:88px 0 96px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:none}
-.hero h1{font-size:clamp(1.6rem,3.2vw,2.5rem);line-height:1.2;max-width:20ch}
-.hero h1 .hl{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero p.lead{color:var(--muted);font-size:1.15rem;max-width:36ch;margin:1.5rem 0 2rem}
-.hero-cta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
-.trust{margin-top:2.6rem;display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
-.avatars{display:flex}
-.avatars span{width:34px;height:34px;border-radius:50%;margin-left:-10px;border:2px solid var(--bg);background:linear-gradient(135deg,var(--surface),var(--border));display:grid;place-items:center;font-size:.75rem;font-weight:700;color:var(--text)}
-.avatars span:first-child{margin-left:0}
-.stars{color:var(--accent-2);letter-spacing:2px}
-.hero::before{content:"";position:absolute;top:-20%;right:-10%;width:620px;height:620px;background:radial-gradient(circle, color-mix(in srgb,var(--accent) 26%, transparent), transparent 60%);filter:blur(20px);z-index:0;pointer-events:none}
-.hero .wrap{position:relative;z-index:1}
 
 section{padding:96px 0}
 .sec-head{max-width:680px;margin-bottom:54px}
@@ -205,13 +199,152 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 
+/* ============================================================
+   INTRO ANIMAT — logo-ul Vizuroiu care se desface la scroll.
+   Înlocuiește vechiul hero. Controlat 100% de scroll.
+   ============================================================ */
+.driver{height:260vh;position:relative}
+
+.stage{
+  position:sticky;
+  top:0;
+  height:100vh;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  background:var(--bg);
+}
+.stage::before{
+  content:"";
+  position:absolute;
+  width:min(90vw,900px);
+  height:min(90vw,900px);
+  border-radius:50%;
+  background:radial-gradient(circle,
+     color-mix(in srgb,var(--accent) 22%, transparent),
+     transparent 62%);
+  filter:blur(30px);
+  opacity:calc(.35 + var(--defs) * .25 - var(--final) * .2);
+  transform:scale(calc(1 + var(--split) * .15));
+  pointer-events:none;
+  transition:opacity .2s linear;
+}
+
+.logo-zone{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:clamp(14px,3.2vh,34px);
+  z-index:2;
+  opacity:calc(1 - var(--logoout));
+  transition:opacity .15s linear;
+}
+.mark{
+  width:clamp(44px,6.4vw,78px);
+  height:auto;
+  opacity:calc(1 - var(--split) * 1.7);
+  transform:
+     translateY(calc(var(--split) * -10px))
+     scale(calc(1 - var(--split) * .28))
+     rotate(calc(var(--split) * -16deg));
+  filter:drop-shadow(0 6px 30px color-mix(in srgb,var(--accent) 34%, transparent));
+}
+.wordmark{
+  display:flex;
+  align-items:baseline;
+  justify-content:center;
+  font-family:"MuseoModerno",sans-serif;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:-.005em;
+  font-size:clamp(2.6rem,13vw,9.5rem);
+  line-height:1;
+  white-space:nowrap;
+}
+.wordmark .h{display:inline-block;will-change:transform}
+.wordmark .left{transform:translateX(calc(var(--split) * -16vw - var(--logoout) * 16vw))}
+.wordmark .right{transform:translateX(calc(var(--split) * 16vw + var(--logoout) * 16vw))}
+.wordmark .dot{color:var(--accent);margin-left:.06em}
+
+.seam{
+  position:absolute;
+  left:50%;top:50%;
+  width:2px;
+  height:clamp(70px,16vh,150px);
+  margin-left:-1px;
+  background:linear-gradient(180deg,transparent,var(--accent),transparent);
+  opacity:calc(var(--split) * (1 - var(--split)) * 3.6);
+  transform:translateY(-50%) scaleY(calc(.4 + var(--split) * .6));
+}
+
+.defs{
+  position:absolute;
+  left:50%;
+  top:calc(50% + clamp(90px,17vh,160px));
+  transform:translate(-50%, calc(20px - var(--defs) * 20px));
+  display:flex;
+  flex-direction:column;
+  gap:clamp(6px,1.4vh,14px);
+  text-align:center;
+  opacity:var(--defs);
+  z-index:2;
+  pointer-events:none;
+}
+.defs .row{font-family:"MuseoModerno",sans-serif;font-weight:600;font-size:clamp(1rem,2.5vw,1.7rem);letter-spacing:.01em;color:var(--muted)}
+.defs .row b{font-weight:900;text-transform:uppercase;background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.defs .row i{color:var(--muted);font-style:normal;margin:0 .5em;opacity:.6}
+.defs .row span{color:var(--text)}
+
+.final{
+  position:absolute;
+  left:50%;top:50%;
+  width:min(90vw,1000px);
+  transform:translate(-50%,-50%) translateY(calc((1 - var(--final)) * 34px));
+  text-align:center;
+  opacity:var(--final);
+  z-index:3;
+  pointer-events:none;
+}
+.final p{font-family:"MuseoModerno",sans-serif;font-weight:800;font-size:clamp(1.6rem,4.6vw,3.4rem);line-height:1.18;letter-spacing:-.015em}
+.final .vis{color:var(--accent);font-weight:800}
+.final .brand{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+.hint{
+  position:fixed;
+  left:50%;bottom:26px;
+  transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--muted);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+  opacity:var(--hint);
+  transition:opacity .3s linear;
+  z-index:45;
+  pointer-events:none;
+}
+.hint svg{width:20px;height:20px;animation:bob 1.8s var(--ease) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.progress{
+  position:fixed;
+  left:0;bottom:0;
+  height:2px;
+  width:calc(var(--p) * 100%);
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  z-index:46;
+  transition:opacity .35s linear;
+}
+
+/* header ascuns cât timp rulează intro-ul animat */
+body.anim header{opacity:0;transform:translateY(-100%);pointer-events:none}
+body:not(.anim) .hint,
+body:not(.anim) .progress{opacity:0;pointer-events:none}
+
+
 @media(max-width:900px){
   .steps7{grid-template-columns:1fr 1fr}
   .stats{grid-template-columns:1fr 1fr;gap:32px}
   .split{grid-template-columns:1fr;gap:32px}
   .foot{grid-template-columns:1fr 1fr}
-  .hero-grid{grid-template-columns:1fr}
-  .hero-grid .hero-media{order:-1}
   .values-grid,.offer-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:620px){
@@ -224,11 +357,27 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
   .mobile-break{display:block}
   .values-grid,.offer-grid{grid-template-columns:1fr}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .driver{height:auto}
+  .stage{position:static;height:auto;min-height:100vh;padding:16vh 6vw;gap:8vh}
+  .mark{display:none}
+  .wordmark .left,.wordmark .right{transform:none}
+  .seam{display:none}
+  .defs{position:static;transform:none;opacity:1;margin:6vh 0}
+  .final{position:static;transform:none;opacity:1}
+  .hint{display:none}
+  .logo-zone{opacity:1}
+  body.anim header{opacity:1;transform:none;pointer-events:auto}
+}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 </style>
 </head>
-<body>
+<body class="anim">
+
+<h1 class="vh">Vizuroiu — agenție de video, fotografie și content marketing în Brăila, Galați, Buzău și Tulcea</h1>
 
 <header id="hdr">
   <div class="wrap nav">
@@ -247,28 +396,36 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-grid">
-      <div>
-        <span class="eyebrow">Vizuroiu • Focus pe tine</span>
-        <h1>Ajutăm brandurile să devină <span class="hl" style="text-transform:uppercase">vizibile</span></h1>
-        <p class="lead">Oferim servicii profesionale de creare a conținutului pentru rețelele sociale.</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Hai să discutăm
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-          <a href="#portofoliu" class="btn btn-ghost">Vezi portofoliul</a>
-        </div>
-      </div>
-      <div class="hero-media">
-        <img src="img/fondatori-vizuroiu-media.jpg" alt="Fondatorii Vizuroiu" style="width:100%;aspect-ratio:16/11;object-fit:cover;object-position:top;border-radius:14px;margin-bottom:24px">
-      </div>
-    </div>
-  </div>
-</section>
+<!-- INTRO ANIMAT (înlocuiește vechiul hero) -->
+<div class="driver">
+  <div class="stage" id="stage">
 
+    <div class="logo-zone">
+      <img class="mark" src="img/icon-vizuroiu.png" alt="" aria-hidden="true">
+      <div class="wordmark" aria-label="Vizuroiu">
+        <span class="h left">VIZU</span>
+        <span class="h right">ROIU<span class="dot">.</span></span>
+      </div>
+      <span class="seam" aria-hidden="true"></span>
+    </div>
+
+    <div class="defs" aria-hidden="true">
+      <div class="row"><b>Vizu</b><i>=</i><span>Vizibilitate</span></div>
+      <div class="row"><b>Roiu</b><i>=</i><span>Return on Investment</span></div>
+    </div>
+
+    <div class="final">
+      <p>Investiția ta crește <span class="vis">vizibil</span> lucrând cu <span class="brand">Vizuroiu</span>.</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="hint" id="hint">
+  <span>Scroll</span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+</div>
+<div class="progress" id="progress"></div>
 
 <!-- CLIENTS MARQUEE -->
 <div id="despre" class="clients-section">
@@ -592,6 +749,62 @@ footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--b
 </footer>
 
 <script>
+/* ---------- INTRO ANIMAT (controlat de scroll) ---------- */
+(function(){
+  var root = document.documentElement;
+  var body = document.body;
+  var driver = document.querySelector('.driver');
+  var reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+
+  var clamp = function(v,a,b){ return v<a?a : v>b?b : v; };
+  var seg   = function(p,a,b){ return clamp((p-a)/(b-a),0,1); };
+  var smooth= function(t){ return t*t*(3-2*t); };
+
+  var target = 0, cur = 0;
+
+  function readScroll(){
+    var total = driver.offsetHeight - window.innerHeight;
+    var passed = -driver.getBoundingClientRect().top;
+    target = clamp(total > 0 ? passed / total : 0, 0, 1);
+  }
+
+  function render(p){
+    var split  = smooth(seg(p, 0.06, 0.34));
+    var defsIn = smooth(seg(p, 0.32, 0.46));
+    var defsOut= smooth(seg(p, 0.54, 0.65));
+    var defs   = defsIn * (1 - defsOut);
+    var logoout= smooth(seg(p, 0.56, 0.70));
+    var fin    = smooth(seg(p, 0.64, 0.87));
+    var hint   = 1 - smooth(seg(p, 0.02, 0.10));
+
+    root.style.setProperty('--p', p.toFixed(4));
+    root.style.setProperty('--split', split.toFixed(4));
+    root.style.setProperty('--defs', defs.toFixed(4));
+    root.style.setProperty('--logoout', logoout.toFixed(4));
+    root.style.setProperty('--final', fin.toFixed(4));
+    root.style.setProperty('--hint', hint.toFixed(4));
+
+    body.classList.toggle('anim', p < 0.985);
+  }
+
+  if (reduce){ body.classList.remove('anim'); render(0); return; }
+
+  function loop(){
+    cur += (target - cur) * 0.12;
+    if (Math.abs(target - cur) < 0.0002) cur = target;
+    render(cur);
+    requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('scroll', readScroll, {passive:true});
+  window.addEventListener('resize', readScroll);
+  readScroll();
+  cur = target;
+  render(cur);
+  requestAnimationFrame(loop);
+})();
+
+/* ---------- restul paginii (preluat din vizuroiu.html) ---------- */
 const hdr=document.getElementById('hdr');
 addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
 const burger=document.getElementById('burger'),menu=document.getElementById('menu');
