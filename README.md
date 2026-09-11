@@ -39,5 +39,11 @@ Site-ul de prezentare al agenției **Vizuroiu** (video & marketing), Brăila —
 - [`robots.txt`](robots.txt) — configurare crawlere
 - [`sitemap.xml`](sitemap.xml) — hartă site pentru motoare de căutare
 
+### Materiale de lucru (nu fac parte din site-ul live)
+- [`branding/`](branding/) — identitate vizuală: logo-uri, fonturi, mockup-uri, carusele social media, cover-uri TikTok, draft-uri de concept
+- [`scripts/`](scripts/) — scripturi Python care generează caruselele & cover-urile din `branding/` (se rulează din rădăcina proiectului, ex. `python3 scripts/make_carousel_servicii.py`)
+- [`docs/`](docs/) — notițe interne (ce s-a făcut la site, propuneri de texte)
+- [`google-apps-script/`](google-apps-script/) — codul din spatele formularului de contact
+
 ## Tehnologii
 Site static, scris în HTML (fără framework/build step).
