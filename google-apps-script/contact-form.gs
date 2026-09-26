@@ -139,9 +139,11 @@ function sendFallbackConfirmationEmail_(toEmail, nume) {
     to: toEmail,
     subject: 'Mulțumim pentru mesaj — Vizuroiu',
     body:
-      'Mulțumim, ' + nume + '!\n\n' +
-      'Am primit datele tale și confirmăm înscrierea. Echipa noastră de content marketing analizează ' +
-      'informațiile transmise și te va contacta în cel mai scurt timp.\n\n' +
+      'Salut, ' + nume + '!\n\n' +
+      'Îți mulțumim că ai completat formularul! Am pregătit un video scurt în care îți arătăm cine suntem, ' +
+      'cum lucrăm și cum te putem ajuta să crești vizibilitatea afacerii tale:\n' +
+      'https://youtu.be/XRSZpukFmRw\n\n' +
+      'Urmărește-l — în mai puțin de 24h te contactăm pentru afacerea ta. Mulțumim pentru încredere!\n\n' +
       'Echipa Vizuroiu',
     htmlBody: buildConfirmationEmailHtml_(nume)
   });
@@ -199,12 +201,45 @@ function buildConfirmationEmailHtml_(nume) {
 
         <tr>
           <td style="padding:24px 44px 8px 44px;">
-            <h1 style="margin:0 0 16px 0; font-size:26px; line-height:1.35; color:#f5ece6; font-weight:700; letter-spacing:-0.3px;">
-              Mulțumim, {{Nume}}!
+            <h1 style="margin:0 0 12px 0; font-size:26px; line-height:1.35; color:#f5ece6; font-weight:700; letter-spacing:-0.3px;">
+              Salut, {{Nume}}!
             </h1>
-            <p style="margin:0 0 18px 0; font-size:16px; line-height:1.65; color:#f5ece6;">
-              Am primit datele tale și confirmăm înscrierea. Echipa noastră de content marketing analizează
-              informațiile transmise și te va contacta în cel mai scurt timp.
+            <p style="margin:0 0 4px 0; font-size:16px; line-height:1.6; color:#f5ece6;">
+              Îți mulțumim că ai completat formularul! Am pregătit un video scurt în care îți arătăm cine suntem, cum lucrăm și cum te putem ajuta să crești vizibilitatea afacerii tale.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:8px 44px 0 44px;">
+            <a href="https://youtu.be/XRSZpukFmRw" target="_blank" style="text-decoration:none; display:block;">
+              <img src="https://vizuroiu.ro/img/video-cover-vizibilitate.jpg" alt="Cum construim vizibilitate pentru afacerea ta" width="512" style="display:block; width:100%; max-width:512px; height:auto; border-radius:10px 10px 0 0;">
+            </a>
+            <div style="background-color:#241a12; border-radius:0 0 10px 10px; padding:12px 16px;">
+              <div style="color:#f5ece6; font-size:13.5px; font-weight:700; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; margin:0 0 3px 0;">Cunoaște echipa VIZUROIU Media</div>
+              <div style="color:#cbb9ab; font-size:11.5px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;">🎬 Video prezentare · 8 min</div>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:16px 44px 4px 44px;" align="center">
+            <table role="presentation" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="background-color:#ef721d; border-radius:8px;">
+                  <a href="https://youtu.be/XRSZpukFmRw" target="_blank" style="display:inline-block; padding:12px 34px; font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:15px; font-weight:700; color:#182a35; text-decoration:none;">
+                    <span style="display:inline-block; width:0; height:0; border-top:6px solid transparent; border-bottom:6px solid transparent; border-left:9px solid #182a35; vertical-align:middle; margin-right:8px;"></span>Pornește video-ul
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px 44px 8px 44px;">
+            <p style="margin:0; font-size:16px; line-height:1.6; color:#f5ece6;">
+              Urmărește-l — în mai puțin de 24h te contactăm pentru afacerea ta. Mulțumim pentru încredere!
             </p>
           </td>
         </tr>
