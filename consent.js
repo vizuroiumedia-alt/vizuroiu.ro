@@ -5,7 +5,7 @@
  */
 (function(){
   /* Completează cu ID-ul real din Google Ads (ex: AW-123456789). Cât timp conține XXXX, nu se încarcă nimic. */
-  var GOOGLE_ADS_ID = 'AW-XXXXXXXXXX';
+  var GOOGLE_ADS_ID = 'AW-18138865790';
   var KEY = 'vz_consent';
 
   function read(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
@@ -28,7 +28,7 @@
 
   /* Folosit de formularul de contact: trimite conversia doar cu consimțământ. */
   window.vzTrackConversion = function(label){
-    if (read() === 'granted' && GOOGLE_ADS_ID.indexOf('XXXX') === -1 && label) {
+    if (read() === 'granted' && GOOGLE_ADS_ID.indexOf('XXXX') === -1 && label && label.indexOf('XXXX') === -1) {
       gtag('event', 'conversion', {'send_to': GOOGLE_ADS_ID + '/' + label});
     }
   };
