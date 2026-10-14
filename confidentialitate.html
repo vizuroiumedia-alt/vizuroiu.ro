@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Politica de confidențialitate — Vizuroiu SRL</title>
+<meta name="description" content="Cum prelucrează Vizuroiu SRL datele personale: ce colectăm, de ce, cât le păstrăm, drepturile tale și politica de cookies." />
+<meta name="robots" content="index, follow" />
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root{
+  --bg:#0B0C10;--bg-2:#101218;--surface:#161922;--border:#242837;
+  --text:#F4F5F7;--muted:#9AA0B0;--accent:#FF5436;--accent-2:#FF9A3C;
+  --accent-ink:#0B0C10;--maxw:1180px;--r:16px;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Inter",system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;line-height:1.02;letter-spacing:-.02em}
+.eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--accent);display:inline-block}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;padding:.85rem 1.4rem;border-radius:999px;font-size:.98rem;transition:transform .25s var(--ease),background .25s;cursor:pointer;border:1px solid transparent}
+.btn-primary{background:linear-gradient(120deg,var(--accent),var(--accent-2));color:var(--accent-ink);box-shadow:0 10px 30px -10px var(--accent)}
+.btn-primary:hover{transform:translateY(-2px)}
+.btn-ghost{border-color:var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--border)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.35rem;letter-spacing:-.03em;display:flex;align-items:center}
+.logo .dot{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{font-size:.95rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta{display:flex;align-items:center;gap:1rem}
+.burger{display:none;background:none;border:0;color:var(--text);cursor:pointer}
+
+.page-hero{padding:80px 0 64px;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;top:-20%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%);filter:blur(20px);z-index:0;pointer-events:none}
+.page-hero .wrap{position:relative;z-index:1}
+.page-hero h1{font-size:clamp(2.4rem,5.5vw,4rem);margin-top:1rem}
+.page-hero p{color:var(--muted);font-size:1.1rem;max-width:44ch;margin-top:1rem}
+
+/* LAYOUT */
+.contact-layout{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;padding:56px 0 96px;align-items:start}
+
+/* INFO SIDE */
+.info-side h2{font-size:1.6rem;margin-bottom:28px}
+.info-block{display:flex;gap:16px;margin-bottom:28px;align-items:flex-start}
+.info-block .icon{width:44px;height:44px;border-radius:12px;background:var(--surface);border:1px solid var(--border);display:grid;place-items:center;flex-shrink:0}
+.info-block .icon svg{width:20px;height:20px;stroke:var(--accent);fill:none;stroke-width:2}
+.info-block .label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:4px}
+.info-block .value{font-weight:600;font-size:1rem}
+.info-block .value a{transition:color .2s}
+.info-block .value a:hover{color:var(--accent)}
+
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 20px;margin-top:6px}
+.hours-grid span{font-size:.9rem;color:var(--muted)}
+.hours-grid b{font-size:.9rem;font-weight:600}
+
+.social-row{display:flex;gap:12px;margin-top:32px}
+.social-btn{display:flex;align-items:center;gap:8px;padding:.6rem 1rem;border-radius:999px;border:1px solid var(--border);font-size:.88rem;font-weight:600;color:var(--muted);transition:border-color .2s,color .2s}
+.social-btn:hover{border-color:var(--accent);color:var(--accent)}
+.social-btn svg{width:18px;height:18px}
+
+/* FORM SIDE */
+.form-card{background:var(--surface);border:1px solid var(--border);border-radius:24px;padding:40px}
+.form-card h2{font-size:1.5rem;margin-bottom:8px}
+.form-card p{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
+.field label{font-size:.82rem;font-weight:600;color:var(--muted);letter-spacing:.04em}
+.field input,.field textarea,.field select{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:.75rem 1rem;color:var(--text);font-family:"Inter",sans-serif;font-size:.95rem;transition:border-color .2s;outline:none;width:100%}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--accent)}
+.field input.invalid,.field textarea.invalid{border-color:#ff5a5a}
+.field-error{font-size:.8rem;font-weight:600;color:#ff7a7a;letter-spacing:.02em;margin:2px 0 0}
+.field textarea{resize:vertical;min-height:130px}
+.field select option{background:var(--bg)}
+
+.field-checkbox{margin-bottom:20px}
+.checkbox-label{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;font-weight:400;color:var(--muted);letter-spacing:normal;line-height:1.4;cursor:pointer}
+.checkbox-label input[type="checkbox"]{width:18px;height:18px;flex-shrink:0;margin-top:2px;accent-color:var(--accent);cursor:pointer}
+
+.submit-btn{width:100%;justify-content:center;margin-top:8px;font-size:1rem;padding:1rem}
+
+/* success state */
+.success-msg{display:none;background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 35%,var(--border));border-radius:12px;padding:16px 20px;color:var(--text);font-size:.95rem;margin-top:16px;align-items:center;gap:12px}
+.success-msg svg{width:20px;height:20px;flex-shrink:0;stroke:var(--accent);fill:none;stroke-width:2.2}
+
+footer{border-top:1px solid var(--border);padding:60px 0 40px;background:var(--bg-2)}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px}
+.foot p{color:var(--muted);font-size:.92rem;margin-top:1rem;max-width:32ch}
+.foot h4{font-family:"Bricolage Grotesque",sans-serif;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.foot a{display:block;color:var(--text);font-size:.95rem;margin-bottom:.6rem;transition:color .2s}
+.foot a:hover{color:var(--accent)}
+.foot .small{color:var(--muted);font-size:.9rem;margin-bottom:.5rem}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:48px;padding-top:24px;border-top:1px solid var(--border);color:var(--muted);font-size:.85rem}
+.socials{display:flex;gap:14px}
+.socials a{color:var(--muted)}
+.socials a:hover{color:var(--accent)}
+.socials svg{width:20px;height:20px}
+
+@media(max-width:900px){
+  .contact-layout{grid-template-columns:1fr;gap:32px;padding:40px 0 72px}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media(max-width:620px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--border);padding:18px 24px;gap:1.1rem}
+  .burger{display:block}
+  .page-hero{padding:48px 0 40px}
+  .page-hero h1{font-size:clamp(2rem,8vw,3rem)}
+  .page-hero p{font-size:1rem}
+  .contact-layout{padding:28px 0 56px;gap:24px}
+  .form-row{grid-template-columns:1fr}
+  .form-card{padding:24px 18px;border-radius:18px}
+  .form-card h2{font-size:1.3rem}
+  .social-row{flex-wrap:wrap;gap:10px}
+  .info-side h2{font-size:1.3rem}
+  .foot{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+.legal{padding:8px 0 96px}
+.legal .wrap{max-width:820px}
+.legal h2{font-size:1.5rem;margin:2.4rem 0 .8rem}
+.legal p,.legal li{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:.8rem}
+.legal ul{padding-left:1.2rem;margin-bottom:1rem}
+.legal a{color:var(--text);text-decoration:underline}
+.legal strong{color:var(--text)}
+.legal .meta{font-size:.9rem;margin-bottom:1.6rem}
+.legal table{width:100%;border-collapse:collapse;margin:.6rem 0 1.2rem;font-size:.92rem}
+.legal th,.legal td{text-align:left;vertical-align:top;padding:10px 12px;border:1px solid var(--border);color:var(--muted)}
+.legal th{color:var(--text);background:var(--surface);font-weight:600}
+.legal .tbl-wrap{overflow-x:auto}
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="vizuroiu.html" class="logo">Vizuroiu</a>
+    <nav class="nav-links" id="menu">
+      <a href="vizuroiu.html#despre">Despre noi</a>
+      <a href="vizuroiu.html#despre">Cei 7 pași</a>
+      <a href="vizuroiu.html#rezultate">Rezultate</a>
+      <a href="vizuroiu.html#portofoliu">Portofoliu</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="contact.html" class="btn btn-primary">Audit gratuit</a>
+      <button class="burger" id="burger" aria-label="Meniu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Vizuroiu • Legal</span>
+    <h1>Politica de confidențialitate</h1>
+    <p>Ce date colectăm, de ce, cât le păstrăm și ce drepturi ai.</p>
+  </div>
+</div>
+
+<section class="legal">
+  <div class="wrap">
+    <p class="meta">Ultima actualizare: 14 octombrie 2026</p>
+
+    <h2>1. Cine suntem</h2>
+    <p>Operatorul datelor tale este <strong>Vizuroiu SRL</strong>, CUI 51699885, Nr. Reg. Com. J2025030121000, cu sediul social în Brăila, str. Împăratul Traian nr. 21, Biroul nr. 2, județul Brăila, România (denumită în continuare „Vizuroiu", „noi"). Adresa la care ne găsești: str. Industriei nr. 17, Brăila.</p>
+    <p>Ne poți contacta pentru orice întrebare despre datele tale la <a href="mailto:vizuroiumedia@gmail.com">vizuroiumedia@gmail.com</a> sau la <a href="tel:+40741540314">+40 741 540 314</a>.</p>
+
+    <h2>2. Ce date colectăm și de ce</h2>
+    <div class="tbl-wrap"><table>
+      <tr><th>Situație</th><th>Date</th><th>Scop</th><th>Temei legal</th><th>Păstrare</th></tr>
+      <tr>
+        <td>Completezi formularul de contact</td>
+        <td>Nume, telefon, email, serviciul de interes, activitatea afacerii, numele firmei</td>
+        <td>Să îți răspundem la solicitare și să îți facem o ofertă; confirmare prin email</td>
+        <td>Demersuri precontractuale la cererea ta (art. 6 alin. 1 lit. b GDPR) și interes legitim de a răspunde (lit. f)</td>
+        <td>până la 24 de luni de la ultima discuție, dacă nu devii client</td>
+      </tr>
+      <tr>
+        <td>Bifezi căsuța opțională pentru oferte și noutăți</td>
+        <td>Nume, email, telefon</td>
+        <td>Să îți trimitem oferte sau noutăți despre serviciile noastre</td>
+        <td>Consimțământul tău (art. 6 alin. 1 lit. a GDPR)</td>
+        <td>până retragi consimțământul</td>
+      </tr>
+      <tr>
+        <td>Devii client</td>
+        <td>Datele necesare contractului și facturării</td>
+        <td>Prestarea serviciilor, facturare, obligații contabile și fiscale</td>
+        <td>Executarea contractului și obligații legale (art. 6 alin. 1 lit. b și c)</td>
+        <td>conform legislației contabile (de regulă 10 ani pentru documentele financiar-contabile)</td>
+      </tr>
+      <tr>
+        <td>Accepți cookie-urile de publicitate</td>
+        <td>Identificatori online și date despre navigare, prin Google Ads</td>
+        <td>Măsurarea reclamelor și a conversiilor</td>
+        <td>Consimțământul tău (art. 6 alin. 1 lit. a GDPR)</td>
+        <td>conform duratei cookie-urilor, secțiunea 6</td>
+      </tr>
+    </table></div>
+    <p>Nu îți cerem date sensibile și nu luăm decizii automate care să te afecteze.</p>
+    <p>Dacă nu bifezi căsuța opțională, nu primești mesaje promoționale. Formularul se trimite și fără ea.</p>
+
+    <h2>3. Cui dăm datele</h2>
+    <p>Datele nu sunt vândute. Le folosesc doar persoanele din echipa Vizuroiu și furnizorii care ne ajută să operăm site-ul și comunicarea, ca persoane împuternicite:</p>
+    <ul>
+      <li><strong>Google</strong> (Google Workspace / Google Sheets / Apps Script): stocarea cererilor primite prin formular și emailul nostru.</li>
+      <li><strong>Brevo</strong> (Sendinblue SAS, Franța): evidența contactelor și trimiterea emailurilor de confirmare și, dacă ai consimțit, a ofertelor.</li>
+      <li><strong>Netlify</strong>: găzduirea site-ului (jurnale tehnice ale serverului, inclusiv adresa IP).</li>
+      <li><strong>Google Ads</strong>, doar dacă accepți cookie-urile de publicitate.</li>
+      <li>Autorități publice, dacă legea ne obligă.</li>
+    </ul>
+    <p>Unii furnizori (de exemplu Google, Netlify) pot prelucra date în afara Spațiului Economic European. În acest caz ne bazăm pe garanțiile prevăzute de GDPR: clauze contractuale standard sau Cadrul UE–SUA de confidențialitate a datelor.</p>
+
+    <h2>4. Drepturile tale</h2>
+    <p>Conform GDPR, ai dreptul la:</p>
+    <ul>
+      <li>acces la datele tale și la o copie a lor;</li>
+      <li>rectificarea datelor incorecte;</li>
+      <li>ștergerea datelor („dreptul de a fi uitat");</li>
+      <li>restricționarea prelucrării;</li>
+      <li>portabilitatea datelor;</li>
+      <li>opoziție față de prelucrarea bazată pe interes legitim și față de marketing direct;</li>
+      <li>retragerea consimțământului, oricând, fără să afecteze prelucrarea de până atunci.</li>
+    </ul>
+    <p>Îți exerciți drepturile scriindu-ne la <a href="mailto:vizuroiumedia@gmail.com">vizuroiumedia@gmail.com</a>. Răspundem în cel mult 30 de zile.</p>
+    <p>Poți depune o plângere la <strong>Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP)</strong>: Bd. G-ral. Gheorghe Magheru nr. 28-30, București, <a href="https://www.dataprotection.ro" target="_blank" rel="noopener">www.dataprotection.ro</a>.</p>
+
+    <h2>5. Securitate</h2>
+    <p>Site-ul folosește conexiune HTTPS. Accesul la datele din formular este limitat la persoanele din echipă, iar conturile furnizorilor sunt protejate prin parolă.</p>
+
+    <h2 id="cookies">6. Cookie-uri și tehnologii similare</h2>
+    <p>Un cookie este un fișier mic salvat în browserul tău. Site-ul nostru folosește următoarele:</p>
+    <div class="tbl-wrap"><table>
+      <tr><th>Tip</th><th>Ce face</th><th>Când se activează</th></tr>
+      <tr>
+        <td><strong>Strict necesare</strong><br>(memorarea alegerii tale, în spațiul local al browserului: <code>vz_consent</code>)</td>
+        <td>Ține minte dacă ai acceptat sau refuzat cookie-urile, ca să nu te întrebăm la fiecare vizită.</td>
+        <td>Imediat. Nu cere consimțământ.</td>
+      </tr>
+      <tr>
+        <td><strong>Publicitate și măsurare</strong><br>(Google Ads: de ex. <code>_gcl_aw</code>, <code>_gcl_au</code>)</td>
+        <td>Ne arată dacă o reclamă a dus la o solicitare trimisă prin formular.</td>
+        <td>Doar după ce apeși <em>Accept</em>.</td>
+      </tr>
+      <tr>
+        <td><strong>Videoclipuri YouTube</strong></td>
+        <td>YouTube poate seta cookie-uri proprii când pornești un video încorporat.</td>
+        <td>Doar la apăsarea butonului de play.</td>
+      </tr>
+    </table></div>
+    <p>Fonturile site-ului sunt găzduite pe serverele noastre, nu se încarcă de la terți.</p>
+    <p>Îți poți schimba alegerea oricând din linkul <a href="#" data-cookie-settings>Setări cookies</a> din subsolul paginii sau ștergând datele site-ului din setările browserului.</p>
+
+    <h2>7. Rețele sociale</h2>
+    <p>Link-urile către Instagram, Facebook, TikTok și YouTube duc spre site-uri terțe, care au propriile politici de confidențialitate. Nu controlăm datele pe care ele le colectează.</p>
+
+    <h2>8. Modificări</h2>
+    <p>Putem actualiza această politică. Versiunea curentă este mereu pe această pagină, cu data ultimei actualizări în partea de sus.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a href="vizuroiu.html" class="logo">Vizuroiu</a>
+        <p>Agenție de content marketing, fotografie și videografie. Creștem vizibilitatea, creăm oportunități.</p>
+      </div>
+      <div>
+        <h4>Meniu</h4>
+        <a href="vizuroiu.html#despre">Despre noi</a>
+        <a href="vizuroiu.html#despre">Cei 7 pași</a>
+        <a href="vizuroiu.html#rezultate">Rezultate</a>
+        <a href="vizuroiu.html#portofoliu">Portofoliu</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:vizuroiumedia@gmail.com">vizuroiumedia@gmail.com</a>
+        <a href="tel:+40741540314">+40 741 540 314</a>
+        <a href="https://www.google.com/maps/place/Vizuroiu-+Agen%C8%9Bie+de+marketing/@45.2910159,27.9635214,17z/data=!3m1!4b1!4m6!3m5!1s0x40b6d7001d29622b:0xe1b7220244eb5482!8m2!3d45.2910159!4d27.9661017!16s%2Fg%2F11wx1t606j?entry=ttu&amp;g_ep=EgoyMDI2MDcwNS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">str. Industriei, nr. 17, Brăila</a>
+      </div>
+      <div>
+        <h4>Program</h4>
+        <span class="small">Luni–Vineri: 09:00 – 17:00</span>
+        <span class="small">Sâmbătă: închis</span>
+        <span class="small">Duminică: închis</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Vizuroiu SRL · CUI 51699885 · Nr. Reg. Com. J2025030121000 · <a href="confidentialitate.html" style="text-decoration:underline">Politica de confidențialitate</a> · <a href="confidentialitate.html#cookies" style="text-decoration:underline">Cookies</a> · <a href="#" data-cookie-settings style="text-decoration:underline">Setări cookies</a></span>
+      <div class="socials">
+        <a href="https://www.instagram.com/vizuroiumedia" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.facebook.com/share/1AUbfTS2PM/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h2.7l.4-3H13V9.1c0-.9.3-1.5 1.6-1.5H16V5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.8 1.4-3.8 3.9V11H7.5v3H10v8z"/></svg></a>
+        <a href="https://www.youtube.com/@vizuroiumedia" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.5 12 5.5 12 5.5s-6 0-7.9.6A3 3 0 0 0 2 8.2 31 31 0 0 0 2 12a31 31 0 0 0 .1 3.8 3 3 0 0 0 2.1 2.1c1.9.6 7.8.6 7.8.6s6 0 7.9-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.1-3.8z"/><path d="M10 15l5-3-5-3z" fill="currentColor"/></svg></a>
+        <a href="https://www.tiktok.com/@vizuroiumedia" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 2.1 1.6 3.6 3.7 3.8v2.6c-1.3.1-2.5-.3-3.7-1v5.9c0 3.4-2.6 5.7-5.8 5.7-3 0-5.2-2.2-5.2-5 0-3 2.4-5.1 5.6-4.8v2.7c-.5-.1-1-.1-1.4 0-1.2.3-1.9 1.2-1.7 2.5.2 1.2 1.2 1.9 2.5 1.7 1.2-.2 1.8-1.1 1.8-2.5V3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+const hdr=document.getElementById('hdr');
+addEventListener('scroll',()=>hdr.classList.toggle('scrolled',scrollY>10));
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger?.addEventListener('click',()=>menu.classList.toggle('open'));
+</script>
+<script src="consent.js" defer></script>
+</body>
+</html>
