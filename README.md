@@ -24,6 +24,7 @@ Site-ul de prezentare al agenției **Vizuroiu** (video & marketing), Brăila —
 - [`client-conaf.html`](client-conaf.html) — CONAF
 - [`client-nobil-dent.html`](client-nobil-dent.html) — Nobil Dent Brașov
 - [`client-diego.html`](client-diego.html) — Diego
+- [`client-la-grecu.html`](client-la-grecu.html) — La Grecu
 - [`client-iorga-viorel.html`](client-iorga-viorel.html) — Iorga Viorel
 - [`client-metalift.html`](client-metalift.html) — Metalift
 - [`client-numa-cafe.html`](client-numa-cafe.html) — Numa Cafe
