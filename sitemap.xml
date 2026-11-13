@@ -1,103 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://vizuroiumedia.net/vizuroiu.html</loc>
+    <loc>https://vizuroiu.ro/</loc>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/despre.html</loc>
+    <loc>https://vizuroiu.ro/agentie-marketing-galati.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vizuroiu.ro/despre.html</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/portofoliu.html</loc>
+    <loc>https://vizuroiu.ro/portofoliu.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/comerciale.html</loc>
+    <loc>https://vizuroiu.ro/comerciale.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/fastfood.html</loc>
+    <loc>https://vizuroiu.ro/fastfood.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/imobiliare.html</loc>
+    <loc>https://vizuroiu.ro/imobiliare.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/contact.html</loc>
+    <loc>https://vizuroiu.ro/contact.html</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-ag-tiny-house.html</loc>
+    <loc>https://vizuroiu.ro/client-ag-tiny-house.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-animall-delta.html</loc>
+    <loc>https://vizuroiu.ro/client-animall-delta.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-autentic-tribe.html</loc>
+    <loc>https://vizuroiu.ro/client-autentic-tribe.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-braila-imobiliare.html</loc>
+    <loc>https://vizuroiu.ro/client-braila-imobiliare.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-cityhouse-residence.html</loc>
+    <loc>https://vizuroiu.ro/client-cityhouse-residence.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-conaf.html</loc>
+    <loc>https://vizuroiu.ro/client-conaf.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-nobil-dent.html</loc>
+    <loc>https://vizuroiu.ro/client-nobil-dent.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-la-grecu.html</loc>
+    <loc>https://vizuroiu.ro/client-la-grecu.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-diego.html</loc>
+    <loc>https://vizuroiu.ro/client-diego.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-iorga-viorel.html</loc>
+    <loc>https://vizuroiu.ro/client-iorga-viorel.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-metalift.html</loc>
+    <loc>https://vizuroiu.ro/client-metalift.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-numa-cafe.html</loc>
+    <loc>https://vizuroiu.ro/client-numa-cafe.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-one-automobile.html</loc>
+    <loc>https://vizuroiu.ro/client-one-automobile.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-pizzeria-arena.html</loc>
+    <loc>https://vizuroiu.ro/client-pizzeria-arena.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-prontoo-pizza.html</loc>
+    <loc>https://vizuroiu.ro/client-prontoo-pizza.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-restaurant-reset.html</loc>
+    <loc>https://vizuroiu.ro/client-restaurant-reset.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-tabiet-good-food.html</loc>
+    <loc>https://vizuroiu.ro/client-tabiet-good-food.html</loc>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://vizuroiumedia.net/client-ten-million.html</loc>
+    <loc>https://vizuroiu.ro/client-ten-million.html</loc>
     <priority>0.4</priority>
   </url>
 </urlset>

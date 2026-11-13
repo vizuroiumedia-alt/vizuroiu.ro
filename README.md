@@ -16,6 +16,7 @@ Site-ul de prezentare al agenției **Vizuroiu** (video & marketing), Brăila —
 - [`imobiliare.html`](imobiliare.html) — video prezentări imobiliare
 
 ### Pagini clienți (studii de caz)
+- [`agentie-marketing-galati.html`](agentie-marketing-galati.html) — pagină de oraș: Agenție de marketing Galați
 - [`client-ag-tiny-house.html`](client-ag-tiny-house.html) — AG Tiny House
 - [`client-animall-delta.html`](client-animall-delta.html) — Animall Delta
 - [`client-autentic-tribe.html`](client-autentic-tribe.html) — Autentic Tribe
